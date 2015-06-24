@@ -1,14 +1,14 @@
 # Configuration for django-allauth plugin
 # http://django-allauth.readthedocs.org/en/latest/configuration.html
 
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # Look up acct by username or email
+ACCOUNT_AUTHENTICATION_METHOD = "username"  # Look up acct by username
 
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = False
 SOCIALACCOUNT_QUERY_EMAIL = ACCOUNT_EMAIL_REQUIRED
 SOCIALACCOUNT_EMAIL_REQUIRED = ACCOUNT_EMAIL_REQUIRED
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_EMAIL_VERIFICATION = ACCOUNT_EMAIL_VERIFICATION
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"  # change this for launch
 
@@ -27,3 +27,5 @@ SOCIALACCOUNT_PROVIDERS = {'google': {'SCOPE': ['profile', 'email'],
                                       'AUTH_PARAMS': {'access_type': 'online'}
                                       }
                            }
+
+SITE_ID = 1
