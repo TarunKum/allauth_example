@@ -9,8 +9,12 @@ the 'accounts/templates/account' directory.
 The available configuration settings indicate that it is fairly common
 to override the default forms. You can list ACCOUNT_FORMS and
 SOCIALACCOUNT_FORMS by form name. There is also an explicit option for
-overriding the signup form: ACCOUNT_SIGNUP_FORM_CLASS. But when I set
-that to the name of my signup form, I get the following error:
+overriding the signup form: ACCOUNT_SIGNUP_FORM_CLASS.
+
+Since I want all of the behavior of the default local form PLUS 2
+fields, it looked to me like I needed to inherit from the SignupForm
+class and just add my fields. But when I tried to do that, I got the
+following error:
 
 ```
 ImproperlyConfigured at /
@@ -83,3 +87,12 @@ File "/Users/cnk/.pyenv/versions/mk-web-core-3.4.3/lib/python3.4/site-packages/a
 Exception Type: ImproperlyConfigured at /
 Exception Value: Error importing form class accounts.forms: "cannot import name 'SignupForm'"
 ```
+
+## The correct way to add fields to the default form
+
+What you are supposed to do is to create your form class with just
+your extra fields + a signup method. Configuring that class to as the
+ACCOUNT_SIGNUP_FORM_CLASS somehow adds that as extra behavior to the
+default form. Like the code in the current version of accounts/forms.py
+
+

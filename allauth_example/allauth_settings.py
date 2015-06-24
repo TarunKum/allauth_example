@@ -12,7 +12,7 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_EMAIL_VERIFICATION = ACCOUNT_EMAIL_VERIFICATION
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"  # change this for launch
 
-ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.MKSignupForm"
+ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.MySignupForm"
 # SOCIALACCOUNT_FORMS (={})
 # Used to override forms, for example: {‘signup’: ‘myapp.forms.SignupForm’}
 
